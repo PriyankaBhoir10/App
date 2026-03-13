@@ -1408,3 +1408,120 @@ function Section({ title, icon, T, children }) {
   );
 }
 ```
+# ConstructIQ — Construction Field Management App
+
+A responsive Construction Field Management web application built with 
+React.js, implementing Login, Project List, and Daily Progress Report 
+(DPR) screens for field site managers.
+
+---
+
+## 🛠️ Tech Stack
+
+| Category        | Technology                        |
+|----------------|-----------------------------------|
+| Framework       | React 18                          |
+| Build Tool      | Vite 5                            |
+| Routing         | React Router v6                   |
+| State Management| useState + useContext             |
+| HTTP Client     | Axios (mock data)                 |
+| Styling         | CSS Modules + CSS Variables       |
+| Fonts           | Barlow Condensed, Barlow (Google) |
+
+---
+
+## ✅ Features Implemented
+
+### 🔐 Login Screen
+- Email and password fields with full validation
+- Mock authentication — `test@test.com` / `123456`
+- Descriptive error message on failed login attempt
+- Redirects to Project List on successful login
+- Show/hide password toggle
+- "Use demo credentials" quick-fill button
+
+### 📁 Project List Screen
+- Static list of 5 hard-coded construction projects
+- Displays: Project Name, Status Badge, Start Date, Location, Budget, Manager
+- Click any project card to open DPR Form pre-filled with that project
+- Color-coded status badges (Active, Pending, Completed, On Hold)
+- Progress bar per project
+- Search by project name, location, or client name
+- Filter by project status (bonus)
+
+### 📝 DPR Form Screen
+- Dropdown to select project (pre-filled when opened from a card)
+- Date picker (restricted to today or earlier)
+- Weather dropdown (Sunny, Partly Cloudy, Cloudy, Rainy, Heavy Rain, Foggy, Windy)
+- Work Description textarea (minimum 20 characters)
+- Worker Count number input (1–5000)
+- Supervisor Name field
+- Remarks / Issues textarea
+- Photo upload: select 1–3 images, shows thumbnail previews with remove option
+- Full validation on all required fields with inline error messages
+- Success confirmation screen with submitted DPR summary
+- Toast notifications for feedback
+- Navigation back to Project List
+
+### 🎨 UI / UX
+- Mobile-first responsive layout (375px base width)
+- Adapts to tablet (768px) and desktop (1280px+)
+- No horizontal scroll on any screen size
+- Dark / Light mode toggle (bonus)
+- Animated page transitions and staggered card reveals (bonus)
+- Industrial-themed design with amber accent colors
+
+---
+🚀 Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/) v18 or higher
+- npm v9 or higher
+
+### Installation & Running Locally
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/YOUR_USERNAME/constructiq-field-management.git
+
+# 2. Navigate into the project directory
+cd constructiq-field-management
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the development server
+npm run dev
+
+# 5. Open in browser
+http://localhost:5173
+Build for Production
+npm run build
+npm run preview
+🔑 Demo Credentials
+Email:    test@test.com
+Password: 123456
+📁 Project Structure
+src/
+├── assets/          # Static assets
+├── components/      # Reusable UI components
+│   ├── Navbar.jsx
+│   ├── Toast.jsx
+│   └── ProtectedRoute.jsx
+├── context/         # React Context providers
+│   ├── AuthContext.jsx
+│   └── ThemeContext.jsx
+├── pages/           # Screen-level components
+│   ├── Login.jsx
+│   ├── ProjectList.jsx
+│   └── DPRForm.jsx
+├── constants/       # Static data (projects, options)
+│   └── projects.js
+├── utils/           # Helper functions & validation
+│   └── helpers.js
+├── App.jsx          # Root component with routing
+└── main.jsx         # Entry point
+📸 Screenshots
+Login Screen | Project List | DPR Form
